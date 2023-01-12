@@ -38,3 +38,10 @@ This folder contains:
 10. data:
   It contains a bunch of json files that contains the data replacing a database. 
   
+  
+test
+
+This folder contains two files one that has two cases for creating a user: successful case and a failure case in which email is in improper format.
+The second file is for the success case of getPurchase request.
+
+
