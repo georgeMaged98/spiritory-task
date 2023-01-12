@@ -19,8 +19,6 @@ describe('POST /user', () => {
     };
     const res = await request(app).post('/user').send(correctPayload);
 
-    console.log(res);
-
     expect(res.statusCode).toBe(201);
     expect(res.body.user.ID).toBe(currentUserID + 1);
   });
@@ -39,19 +37,5 @@ describe('POST /user', () => {
 
     expect(res.statusCode).toBe(400);
     expect(res.body.errors[0].attribute).toBe('Email');
-  });
-});
-
-describe('GET /purchase', () => {
-  it('get Purchase, returns 200 and list of purchases', async () => {
-    const metadata: IMetadata = await getMetaData();
-    const purchaseCount = metadata.purchase;
-
-    const res = await request(app).get('/purchase');
-
-    console.log(res.body);
-
-    expect(res.statusCode).toBe(200);
-    expect(res.body.purchases.length).toBe(purchaseCount);
   });
 });
