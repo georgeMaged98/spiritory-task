@@ -7,17 +7,19 @@ const validatePostUser = async (
   res: Response,
   next: NextFunction
 ) => {
-  const schema = Joi.object({
-    name: Joi.string().required(),
-    lastName: Joi.string().required(),
-    email: Joi.string()
+  const schema: Joi.ObjectSchema = Joi.object({
+    Name: Joi.string().required(),
+    LastName: Joi.string().required(),
+    Email: Joi.string()
       .regex(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)
       .required(),
-    birthday: Joi.date().required(),
-    password: Joi.string().required(),
+    Birthday: Joi.date().required(),
+    Password: Joi.string().required(),
   }).required();
 
-  const isValid = schema.validate(req.body, { abortEarly: false });
+  const isValid: Joi.ValidationResult = schema.validate(req.body, {
+    abortEarly: false,
+  });
   if (isValid.error)
     return next(new RequestValidationError(isValid.error.details));
 

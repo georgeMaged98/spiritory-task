@@ -1,3 +1,5 @@
+// This file can be further optimized using OOP principles and having getData and setData in an abstract class that deals with filesystem
+// and use polymorphism to read/write from files but since that is only for simulation, there is no need for that.
 import { readFile, writeFile } from 'fs/promises';
 
 import {
@@ -9,8 +11,8 @@ import {
 } from '../config/filePaths';
 import { IItem } from '../interfaces/item.interface';
 import { IMetadata } from '../interfaces/metadata.interface';
-import { IPurchase } from '../interfaces/Purchase.interface';
-import { IPurchaseItem } from '../interfaces/PurchaseItem.interface';
+import { IPurchase } from '../interfaces/purchase.interface';
+import { IPurchaseItem } from '../interfaces/purchaseItem.interface';
 import { IUser } from '../interfaces/user.interface';
 
 const getUserData = async (): Promise<IUser[]> => {

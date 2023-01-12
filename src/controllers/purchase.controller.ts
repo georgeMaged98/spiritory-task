@@ -1,9 +1,10 @@
 import { NextFunction, Request, Response } from 'express';
-import { filterPurchaseItemsByPurchaseID } from '../services/purchase.service';
-import { IPurchaseItem } from '../interfaces/PurchaseItem.interface';
-import { getMetaData, getPurchaseData } from '../helpers/database';
+import {
+  filterPurchaseItemsByPurchaseID,
+  getAllPurchases,
+} from '../services/purchase.service';
 import { ISinglePurchase } from '../interfaces/purchaseResults.interface';
-import { IPurchase } from '../interfaces/Purchase.interface';
+import { IPurchase } from '../interfaces/purchase.interface';
 
 const getPurchases = async (
   req: Request,
@@ -11,8 +12,8 @@ const getPurchases = async (
   next: NextFunction
 ) => {
   try {
-    const purchasesPromises: Promise<any>[] = [];
-    const allPurchases: IPurchase[] = await getPurchaseData();
+    const purchasesPromises: Promise<any>[] = []; // for resolving promises concurrently for faster performance
+    const allPurchases: IPurchase[] = await getAllPurchases();
     const purchasesResult: ISinglePurchase[] = [];
 
     for (const pur of allPurchases) {
@@ -30,7 +31,7 @@ const getPurchases = async (
       purchasesResult[index].purchaseItems = purchaseItemResults[index];
     });
 
-    res.send({
+    return res.send({
       purchases: purchasesResult,
     });
   } catch (err) {

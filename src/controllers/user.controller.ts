@@ -1,47 +1,28 @@
 import { NextFunction, Request, Response } from 'express';
 import { IUser } from '../interfaces/user.interface';
-import { IMetadata } from '../interfaces/metadata.interface';
-import {
-  getMetaData,
-  getUserData,
-  saveMetaData,
-  saveUserData,
-} from '../helpers/database';
 import { hashPassword } from '../helpers/hashPassword';
+import { createUser } from '../services/user.service';
 
 const postUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { email, name, lastName, birthday, password } = req.body;
-    const metadata: IMetadata = await getMetaData();
-    console.log(metadata);
+    const { Email, Name, LastName, Birthday, Password }: IUser = req.body;
 
-    metadata.user += 1;
-    const userID = metadata.user;
-
-    await saveMetaData(metadata);
-
-    const hashedPassword = await hashPassword(password);
+    const hashedPassword = await hashPassword(Password);
     const newUser: IUser = {
-      ID: userID,
-      Email: email,
-      Name: name,
-      LastName: lastName,
-      Birthday: new Date(birthday),
+      Email,
+      Name,
+      LastName,
+      Birthday: new Date(Birthday),
       Password: hashedPassword,
     };
 
-    const curUsers: IUser[] = await getUserData();
-    curUsers.push(newUser);
+    await createUser(newUser);
+    delete newUser.Password; // not returning password for security
 
-    await saveUserData(curUsers);
-
-    delete newUser.Password;
-    res.send({
+    res.status(201).send({
       user: newUser,
     });
   } catch (err) {
-    console.log(err);
-
     next(new Error());
   }
 };

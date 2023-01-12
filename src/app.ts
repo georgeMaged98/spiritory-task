@@ -15,6 +15,7 @@ app.all('*', async (req: Request, res: Response, next: NextFunction) => {
   next(new NotFoundError('Route Not Found!'));
 });
 
+// middleware to handle thrown errors
 app.use(errorHandler);
 
 export { app };
