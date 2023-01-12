@@ -1,0 +1,66 @@
+[
+  {
+    "ID": 1,
+    "ItemID": 1,
+    "PurchaseID": 1,
+    "Quantity": 2,
+    "Price": 50,
+    "TotalPurchaseItemPrice": 100
+  },
+  {
+    "ID": 2,
+    "ItemID": 2,
+    "PurchaseID": 1,
+    "Quantity": 3,
+    "Price": 100,
+    "TotalPurchaseItemPrice": 300
+  },
+  {
+    "ID": 3,
+    "ItemID": 2,
+    "PurchaseID": 2,
+    "Quantity": 1,
+    "Price": 50,
+    "TotalPurchaseItemPrice": 50
+  },
+  {
+    "ID": 4,
+    "ItemID": 4,
+    "PurchaseID": 3,
+    "Quantity": 1,
+    "Price": 400,
+    "TotalPurchaseItemPrice": 400
+  },
+  {
+    "ID": 5,
+    "ItemID": 6,
+    "PurchaseID": 3,
+    "Quantity": 2,
+    "Price": 240,
+    "TotalPurchaseItemPrice": 480
+  },
+  {
+    "ID": 6,
+    "ItemID": 3,
+    "PurchaseID": 4,
+    "Quantity": 2,
+    "Price": 120,
+    "TotalPurchaseItemPrice": 240
+  },
+  {
+    "ID": 7,
+    "ItemID": 5,
+    "PurchaseID": 4,
+    "Quantity": 2,
+    "Price": 400,
+    "TotalPurchaseItemPrice": 800
+  },
+  {
+    "ID": 8,
+    "ItemID": 1,
+    "PurchaseID": 4,
+    "Quantity": 2,
+    "Price": 50,
+    "TotalPurchaseItemPrice": 100
+  }
+]

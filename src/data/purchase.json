@@ -1,0 +1,26 @@
+[
+  {
+    "ID": 1,
+    "UserID": 1,
+    "Date": "2022-12-31",
+    "TotalPurchasePrice": 400
+  },
+  {
+    "ID": 2,
+    "UserID": 1,
+    "Date": "2023-01-01",
+    "TotalPurchasePrice": 50
+  },
+  {
+    "ID": 3,
+    "UserID": 2,
+    "Date": "2023-01-02",
+    "TotalPurchasePrice": 880
+  },
+  {
+    "ID": 4,
+    "UserID": 3,
+    "Date": "2023-01-03",
+    "TotalPurchasePrice": 1140
+  }
+]

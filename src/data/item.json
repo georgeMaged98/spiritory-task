@@ -1,0 +1,44 @@
+[
+  {
+    "ID": 1,
+    "Name": "Bourbon Whiskey",
+    "Description": "Whiskey",
+    "DateAdded": "2022-01-01",
+    "Price": 50
+  },
+  {
+    "ID": 2,
+    "Name": "Rye Whiskey",
+    "Description": "Whiskey",
+    "DateAdded": "2022-01-06",
+    "Price": 100
+  },
+  {
+    "ID": 3,
+    "Name": "Bourbon Whiskey",
+    "Description": "Whiskey",
+    "DateAdded": "2022-01-04",
+    "Price": 120
+  },
+  {
+    "ID": 4,
+    "Name": "Scotch Whiskey",
+    "Description": "Whiskey",
+    "DateAdded": "2022-01-05",
+    "Price": 400
+  },
+  {
+    "ID": 5,
+    "Name": "Irish Whiskey",
+    "Description": "Whiskey",
+    "DateAdded": "2022-01-12",
+    "Price": 90
+  },
+  {
+    "ID": 6,
+    "Name": "Japanese Whiskey",
+    "Description": "Whiskey",
+    "DateAdded": "2022-01-15",
+    "Price": 240
+  }
+]
